@@ -8,9 +8,7 @@ function Basket() {
       let item = document.getElementById('inp').value.trim();     
       if (item === '') {
         alert("Enter a fruit name before hitting add item");
-        
-      }
-    
+      }    
       let isDuplicate = false;
       for (let x in fruits) {
         if (fruits[x].toLowerCase() === item.toLowerCase()) {
@@ -43,9 +41,8 @@ function Basket() {
     }
     function SpecItem() {
       var val = document.getElementById('inp1').value.trim();
-      if (fruits.length !== 0) {        
-        if (val !== '') {
-          let found = false; 
+      if (fruits.length !== 0 && val !=='') {        
+        let found = false; 
           for (let x in fruits) {
             if (fruits[x].toLowerCase() === val.toLowerCase()) { 
               var index = fruits.indexOf(fruits[x]); 
@@ -61,7 +58,7 @@ function Basket() {
           if (!found) {
             setmsg('Item not found in the basket');
           }
-        } else {
+         else {
           setmsg('Please enter a fruit to remove');
         }
       } else {
